@@ -1,0 +1,87 @@
+import { Invoice, InvoiceLineItem } from '@/lib/types/invoice';
+
+export const mockInvoices: Invoice[] = [
+  {
+    id: 'inv-1',
+    invoiceNumber: 'INV-2024-000123',
+    contractId: 'contract-1',
+    contractName: 'John Smith',
+    billingPeriodStart: '2024-01-15',
+    billingPeriodEnd: '2024-02-11',
+    status: 'finalized',
+    totalAmount: 4922.00,
+    generatedAt: '2024-02-12T10:00:00Z',
+    finalizedAt: '2024-02-12T11:30:00Z',
+  },
+  {
+    id: 'inv-2',
+    invoiceNumber: 'INV-2024-000124',
+    contractId: 'contract-2',
+    contractName: 'Jane Doe',
+    billingPeriodStart: '2024-01-15',
+    billingPeriodEnd: '2024-02-11',
+    status: 'finalized',
+    totalAmount: 3219.00,
+    generatedAt: '2024-02-12T10:05:00Z',
+    finalizedAt: '2024-02-12T14:20:00Z',
+  },
+  {
+    id: 'inv-3',
+    invoiceNumber: 'INV-2024-000125',
+    contractId: 'contract-3',
+    contractName: 'Bob Wilson',
+    billingPeriodStart: '2024-01-10',
+    billingPeriodEnd: '2024-02-06',
+    status: 'draft',
+    totalAmount: 3360.00,
+    generatedAt: '2024-02-13T09:00:00Z',
+  },
+];
+
+export const mockInvoiceLineItems: Record<string, InvoiceLineItem[]> = {
+  'inv-1': [
+    {
+      id: 'line-1',
+      invoiceId: 'inv-1',
+      lineType: 'contracted_shared',
+      description: 'Shared Support (Contracted)',
+      hours: 160,
+      rate: 18.00,
+      amount: 2880.00,
+    },
+    {
+      id: 'line-2',
+      invoiceId: 'inv-1',
+      lineType: 'contracted_1_to_1',
+      description: '1:1 Support (Contracted)',
+      hours: 80,
+      rate: 25.00,
+      amount: 2000.00,
+    },
+    {
+      id: 'line-3',
+      invoiceId: 'inv-1',
+      lineType: 'actual_shared',
+      description: 'Shared Support (Actual Delivered)',
+      hours: 154,
+      rate: 18.00,
+      amount: 2772.00,
+    },
+    {
+      id: 'line-4',
+      invoiceId: 'inv-1',
+      lineType: 'actual_1_to_1',
+      description: '1:1 Support (Actual Delivered)',
+      hours: 88,
+      rate: 25.00,
+      amount: 2200.00,
+    },
+    {
+      id: 'line-5',
+      invoiceId: 'inv-1',
+      lineType: 'credit_applied',
+      description: 'Credit from Previous Period',
+      amount: -50.00,
+    },
+  ],
+};
