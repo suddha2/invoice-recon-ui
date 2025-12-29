@@ -8,6 +8,7 @@ import {
   ListItemText,
   Toolbar,
 } from '@mui/material';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import DescriptionIcon from '@mui/icons-material/Description';
 import PaymentIcon from '@mui/icons-material/Payment';
@@ -28,6 +29,7 @@ const menuItems = [
   { text: 'Payments', icon: <PaymentIcon />, path: '/payments', roles: ['admin', 'finance'] },
   { text: 'Invoices', icon: <ReceiptIcon />, path: '/invoices', roles: ['admin', 'finance'] },
   { text: 'Reconciliation', icon: <AssessmentIcon />, path: '/reconciliation', roles: ['admin', 'finance'] },
+  { text: 'Rate Changes', icon: <MonetizationOnIcon />, path: '/rate-changes', roles: ['admin', 'finance'] },
 ];
 
 export default function Sidebar({ drawerWidth, mobileOpen, onDrawerToggle }: SidebarProps) {

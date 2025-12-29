@@ -1,7 +1,10 @@
 export interface Contract {
   id: string;
+  regionId: string;
+  regionName: string;
   authorityId: string;
   authorityName: string;
+  lotName: string; // Add this if not present
   serviceUserName: string;
   cycleStartDate: string;
   sharedHoursPerWeek: number;

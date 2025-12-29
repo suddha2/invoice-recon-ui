@@ -3,8 +3,11 @@ import { Contract } from '../lib/types/contract';
 export const mockContracts: Contract[] = [
   {
     id: 'contract-1',
+    regionId: 'region-1',
+    regionName: 'North',
     authorityId: 'auth-1',
     authorityName: 'City Council',
+    lotName: 'Lot A',
     serviceUserName: 'John Smith',
     cycleStartDate: '2024-01-15',
     sharedHoursPerWeek: 40,
@@ -16,8 +19,11 @@ export const mockContracts: Contract[] = [
   },
   {
     id: 'contract-2',
+    regionId: 'region-1',
+    regionName: 'North',
     authorityId: 'auth-1',
     authorityName: 'City Council',
+    lotName: 'Lot A',
     serviceUserName: 'Jane Doe',
     cycleStartDate: '2024-01-15',
     sharedHoursPerWeek: 35,
@@ -29,8 +35,11 @@ export const mockContracts: Contract[] = [
   },
   {
     id: 'contract-3',
+    regionId: 'region-2',
+    regionName: 'East',
     authorityId: 'auth-2',
     authorityName: 'County Social Services',
+    lotName: 'Lot 1',
     serviceUserName: 'Bob Wilson',
     cycleStartDate: '2024-01-10',
     sharedHoursPerWeek: 30,
@@ -42,8 +51,11 @@ export const mockContracts: Contract[] = [
   },
   {
     id: 'contract-4',
+    regionId: 'region-3',
+    regionName: 'West',
     authorityId: 'auth-1',
     authorityName: 'City Council',
+    lotName: 'Lot 2',
     serviceUserName: 'Sarah Johnson',
     cycleStartDate: '2024-02-01',
     sharedHoursPerWeek: 45,

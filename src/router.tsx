@@ -9,15 +9,16 @@ import ContractsPage from './pages/ContractsPage';
 import PaymentsPage from './pages/PaymentsPage';
 import InvoicesPage from './pages/InvoicesPage';
 import ReconciliationPage from './pages/ReconciliationPage';
+import RateChangePage from './pages/RateChangePage';
 
 // Layout
 import Layout from '@/components/layout/Layout';
 
 // Protected Route Component
-function ProtectedRoute({ 
-  children, 
-  allowedRoles 
-}: { 
+function ProtectedRoute({
+  children,
+  allowedRoles
+}: {
   children: React.ReactNode;
   allowedRoles?: UserRole[];
 }) {
@@ -53,7 +54,11 @@ export const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard />,
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance', 'manager']}>
+            <Dashboard />
+          </ProtectedRoute>
+        ),
       },
       {
         path: 'contracts',
@@ -84,6 +89,14 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute allowedRoles={['admin', 'finance']}>
             <ReconciliationPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'rate-changes',
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance']}>
+            <RateChangePage />
           </ProtectedRoute>
         ),
       },
