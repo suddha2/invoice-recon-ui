@@ -1,0 +1,128 @@
+import { Service, RoomAssignment } from '@/lib/types/service';
+
+export const mockServices: Service[] = [
+  {
+    id: 'service-1',
+    name: 'Greendale House',
+    address: '123 Main Street, Northville',
+    regionId: 'region-1',
+    regionName: 'North',
+    totalRooms: 5,
+    createdAt: '2024-01-15',
+  },
+  {
+    id: 'service-2',
+    name: 'Oakwood Manor',
+    address: '456 Oak Avenue, Southtown',
+    regionId: 'region-2',
+    regionName: 'South',
+    totalRooms: 5,
+    createdAt: '2024-02-01',
+  },
+  {
+    id: 'service-3',
+    name: 'Riverside Villa',
+    address: '789 River Road, Northville',
+    regionId: 'region-1',
+    regionName: 'North',
+    totalRooms: 4,
+    createdAt: '2024-03-10',
+  },
+  {
+    id: 'service-4',
+    name: 'Meadowbrook Lodge',
+    address: '321 Meadow Lane, Eastside',
+    regionId: 'region-3',
+    regionName: 'East',
+    totalRooms: 6,
+    createdAt: '2024-01-20',
+  },
+];
+
+export const mockRoomAssignments: RoomAssignment[] = [
+  // Greendale House (3 occupied)
+  {
+    id: 'assign-1',
+    serviceId: 'service-1',
+    serviceName: 'Greendale House',
+    roomNumber: 'Room 1',
+    contractId: 'contract-1',
+    serviceUserName: 'John Smith',
+    assignedDate: '2024-01-15',
+    status: 'active',
+  },
+  {
+    id: 'assign-2',
+    serviceId: 'service-1',
+    serviceName: 'Greendale House',
+    roomNumber: 'Room 2',
+    contractId: 'contract-2',
+    serviceUserName: 'Jane Doe',
+    assignedDate: '2024-01-15',
+    status: 'active',
+  },
+  {
+    id: 'assign-3',
+    serviceId: 'service-1',
+    serviceName: 'Greendale House',
+    roomNumber: 'Room 3',
+    contractId: 'contract-3',
+    serviceUserName: 'Bob Wilson',
+    assignedDate: '2024-02-01',
+    status: 'active',
+  },
+  
+  // Riverside Villa (4 occupied - full)
+  {
+    id: 'assign-4',
+    serviceId: 'service-3',
+    serviceName: 'Riverside Villa',
+    roomNumber: 'Unit A',
+    contractId: 'contract-4',
+    serviceUserName: 'Alice Brown',
+    assignedDate: '2024-03-10',
+    status: 'active',
+  },
+  {
+    id: 'assign-5',
+    serviceId: 'service-3',
+    serviceName: 'Riverside Villa',
+    roomNumber: 'Unit B',
+    contractId: 'contract-5',
+    serviceUserName: 'Charlie Davis',
+    assignedDate: '2024-03-10',
+    status: 'active',
+  },
+  {
+    id: 'assign-6',
+    serviceId: 'service-3',
+    serviceName: 'Riverside Villa',
+    roomNumber: 'Unit C',
+    contractId: 'contract-6',
+    serviceUserName: 'Emma Wilson',
+    assignedDate: '2024-03-15',
+    status: 'active',
+  },
+  {
+    id: 'assign-7',
+    serviceId: 'service-3',
+    serviceName: 'Riverside Villa',
+    roomNumber: 'Unit D',
+    contractId: 'contract-7',
+    serviceUserName: 'Frank Miller',
+    assignedDate: '2024-03-20',
+    status: 'active',
+  },
+  
+  // Meadowbrook Lodge (1 occupied)
+  {
+    id: 'assign-8',
+    serviceId: 'service-4',
+    serviceName: 'Meadowbrook Lodge',
+    roomNumber: 'Room 1',
+    contractId: 'contract-8',
+    serviceUserName: 'Grace Lee',
+    assignedDate: '2024-04-01',
+    status: 'active',
+  },
+];

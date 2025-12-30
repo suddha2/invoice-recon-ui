@@ -1,6 +1,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import * as contractsApi from '@/lib/api/contracts';
-import { CreateContractInput } from '@/lib/types/contract';
+import { Contract, CreateContractInput } from '@/lib/types/contract';
+import { updateContract } from '@/lib/api/contracts';
 
 export function useContracts(authorityId?: string) {
   return useQuery({
@@ -32,10 +33,11 @@ export function useUpdateContract() {
   const queryClient = useQueryClient();
   
   return useMutation({
-    mutationFn: ({ id, data }: { id: string; data: Partial<any> }) =>
-      contractsApi.updateContract(id, data),
+    mutationFn: ({ id, data }: { id: string; data: Partial<Contract> }) =>
+      updateContract(id, data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['contracts'] });
+      queryClient.invalidateQueries({ queryKey: ['service-utilizations'] });
     },
   });
 }

@@ -16,6 +16,7 @@ import ReceiptIcon from '@mui/icons-material/Receipt';
 import AssessmentIcon from '@mui/icons-material/Assessment';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuthStore } from '@/store/authStore';
+import HomeWorkIcon from '@mui/icons-material/HomeWork';
 
 interface SidebarProps {
   drawerWidth: number;
@@ -26,10 +27,11 @@ interface SidebarProps {
 const menuItems = [
   { text: 'Dashboard', icon: <DashboardIcon />, path: '/dashboard', roles: ['admin', 'finance', 'manager', 'viewer'] },
   { text: 'Contracts', icon: <DescriptionIcon />, path: '/contracts', roles: ['admin', 'finance', 'manager'] },
-  { text: 'Payments', icon: <PaymentIcon />, path: '/payments', roles: ['admin', 'finance'] },
   { text: 'Invoices', icon: <ReceiptIcon />, path: '/invoices', roles: ['admin', 'finance'] },
+  { text: 'Payments', icon: <PaymentIcon />, path: '/payments', roles: ['admin', 'finance'] },
   { text: 'Reconciliation', icon: <AssessmentIcon />, path: '/reconciliation', roles: ['admin', 'finance'] },
   { text: 'Rate Changes', icon: <MonetizationOnIcon />, path: '/rate-changes', roles: ['admin', 'finance'] },
+  { text: 'Services', icon: <HomeWorkIcon />, path: '/services', roles: ['admin', 'finance', 'manager'] },
 ];
 
 export default function Sidebar({ drawerWidth, mobileOpen, onDrawerToggle }: SidebarProps) {

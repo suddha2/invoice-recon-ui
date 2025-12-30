@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Box, Typography, Button, TextField, MenuItem, Alert } from '@mui/material';
 import { RateChangeWorkflow } from '@/lib/types/rateChange';
 import { useContracts } from '@/hooks/useContracts';

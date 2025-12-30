@@ -11,7 +11,12 @@ import InvoicesPage from './pages/InvoicesPage';
 import ReconciliationPage from './pages/ReconciliationPage';
 import RateChangePage from './pages/RateChangePage';
 
-// Layout
+
+
+import ServicesPage from './pages/ServicesPage';
+import ServiceDetailsPage from './pages/ServiceDetailsPage';
+import NewServicePage from './pages/NewServicePage';
+import EditServicePage from './pages/EditServicePage';// Layout
 import Layout from '@/components/layout/Layout';
 
 // Protected Route Component
@@ -69,10 +74,34 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: 'payments',
+        path: 'services',
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance', 'manager']}>
+            <ServicesPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'services/new',
         element: (
           <ProtectedRoute allowedRoles={['admin', 'finance']}>
-            <PaymentsPage />
+            <NewServicePage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'services/:id',
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance', 'manager']}>
+            <ServiceDetailsPage />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: 'services/:id/edit',
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance']}>
+            <EditServicePage />
           </ProtectedRoute>
         ),
       },
@@ -84,6 +113,15 @@ export const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
+      {
+        path: 'payments',
+        element: (
+          <ProtectedRoute allowedRoles={['admin', 'finance']}>
+            <PaymentsPage />
+          </ProtectedRoute>
+        ),
+      },
+      
       {
         path: 'reconciliation',
         element: (

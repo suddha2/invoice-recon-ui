@@ -31,6 +31,9 @@ export async function createContract(data: CreateContractInput): Promise<Contrac
     id: `contract-${Date.now()}`,
     authorityName: 'Mock Authority', // In real app, would lookup from authorityId
     status: 'active',
+    regionId: 'region-mock',
+    regionName: 'Mock Region',
+    lotName: 'Mock Lot',
     createdAt: new Date().toISOString(),
     ...data,
   };

@@ -4,13 +4,25 @@ export interface Contract {
   regionName: string;
   authorityId: string;
   authorityName: string;
-  lotName: string; // Add this if not present
+  lotName: string; 
   serviceUserName: string;
+
+// NEW: Service assignment
+  serviceId?: string;
+  serviceName?: string;
+  roomNumber?: string;
+
   cycleStartDate: string;
   sharedHoursPerWeek: number;
   sharedRate: number;
   oneToOneHoursPerWeek: number;
   oneToOneRate: number;
+  twoToOneHoursPerWeek: number;
+  twoToOneRate: number;
+  nightlyRate?: number;
+  nightlyHoursPerWeek?: number;
+  wakingNightRate?: number;
+  wakingNightHoursPerWeek?: number;
   status: 'active' | 'terminated';
   terminatedDate?: string;
   createdAt: string;
